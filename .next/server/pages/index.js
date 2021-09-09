@@ -1,0 +1,66 @@
+"use strict";
+/*
+ * ATTENTION: An "eval-source-map" devtool has been used.
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file with attached SourceMaps in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
+(() => {
+var exports = {};
+exports.id = "pages/index";
+exports.ids = ["pages/index"];
+exports.modules = {
+
+/***/ "./pages/index.tsx":
+/*!*************************!*\
+  !*** ./pages/index.tsx ***!
+  \*************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (/* binding */ App)\n/* harmony export */ });\n/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @apollo/client */ \"@apollo/client\");\n/* harmony import */ var _apollo_client__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_apollo_client__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-dev-runtime */ \"react/jsx-dev-runtime\");\n/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__);\nvar _jsxFileName = \"/Users/yoko/Desktop/Apollo/pages/index.tsx\";\n\n\n\n\nconst GET_DOGS = _apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql`\n  query GetDogs {\n    dogs {\n      id\n      breed\n    }\n  }\n`;\nconst GET_DOC_PHOTO = _apollo_client__WEBPACK_IMPORTED_MODULE_0__.gql`\n  query Dog($breed: String!) {\n    dog(breed: $breed) {\n      id\n      displayImage\n    }\n  }\n`;\n\nfunction DogPhoto({\n  breed\n}) {\n  const [getDog, {\n    loading,\n    error,\n    data,\n    networkStatus\n  }] = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_0__.useLazyQuery)(GET_DOC_PHOTO, {\n    variables: {\n      breed\n    },\n    notifyOnNetworkStatusChange: true\n  });\n  if (networkStatus === _apollo_client__WEBPACK_IMPORTED_MODULE_0__.NetworkStatus.refetch) return \"Refetching!\";\n  if (loading) return null;\n  if (error) return `Error! ${error}`;\n  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(\"div\", {\n    children: [(data === null || data === void 0 ? void 0 : data.dog) && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(\"img\", {\n      src: data.dog.displayImage,\n      style: {\n        height: 100,\n        width: 100\n      }\n    }, void 0, false, {\n      fileName: _jsxFileName,\n      lineNumber: 37,\n      columnNumber: 9\n    }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(\"button\", {\n      onClick: () => getDog({\n        variables: {\n          breed: \"bulldog\"\n        }\n      }),\n      children: \"useLazyQuery!\"\n    }, void 0, false, {\n      fileName: _jsxFileName,\n      lineNumber: 42,\n      columnNumber: 7\n    }, this)]\n  }, void 0, true, {\n    fileName: _jsxFileName,\n    lineNumber: 35,\n    columnNumber: 5\n  }, this);\n}\n\nconst Dog = ({\n  onDogSelected\n}) => {\n  const {\n    loading,\n    error,\n    data\n  } = (0,_apollo_client__WEBPACK_IMPORTED_MODULE_0__.useQuery)(GET_DOGS);\n  if (loading) return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(\"p\", {\n    children: \"Loading...\"\n  }, void 0, false, {\n    fileName: _jsxFileName,\n    lineNumber: 51,\n    columnNumber: 23\n  }, undefined);\n  if (error) return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(\"p\", {\n    children: \"Error\"\n  }, void 0, false, {\n    fileName: _jsxFileName,\n    lineNumber: 52,\n    columnNumber: 21\n  }, undefined);\n  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {\n    children: /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(\"select\", {\n      name: \"dog\",\n      onChange: onDogSelected,\n      children: data.dogs.map(dog => /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(\"option\", {\n        value: dog.breed,\n        children: dog.breed\n      }, dog.id, false, {\n        fileName: _jsxFileName,\n        lineNumber: 58,\n        columnNumber: 11\n      }, undefined))\n    }, void 0, false, {\n      fileName: _jsxFileName,\n      lineNumber: 56,\n      columnNumber: 7\n    }, undefined)\n  }, void 0, false);\n};\n\nfunction App() {\n  const {\n    0: selectedDog,\n    1: setSelectedDog\n  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(null);\n\n  const onDogSelected = ({\n    target\n  }) => {\n    setSelectedDog(target.value);\n  };\n\n  return /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(\"div\", {\n    children: [/*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(\"h2\", {\n      children: \"Building Query components \\uD83D\\uDE80\"\n    }, void 0, false, {\n      fileName: _jsxFileName,\n      lineNumber: 74,\n      columnNumber: 7\n    }, this), selectedDog && /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(DogPhoto, {\n      breed: selectedDog\n    }, void 0, false, {\n      fileName: _jsxFileName,\n      lineNumber: 75,\n      columnNumber: 23\n    }, this), /*#__PURE__*/(0,react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxDEV)(Dog, {\n      onDogSelected: onDogSelected\n    }, void 0, false, {\n      fileName: _jsxFileName,\n      lineNumber: 76,\n      columnNumber: 7\n    }, this)]\n  }, void 0, true, {\n    fileName: _jsxFileName,\n    lineNumber: 73,\n    columnNumber: 5\n  }, this);\n}//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,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QUE7QUFBQTtBQUFBO0FBQUEsWUFERixFQUVHSCxXQUFXLGlCQUFJLDhEQUFDLFFBQUQ7QUFBVSxXQUFLLEVBQUVBO0FBQWpCO0FBQUE7QUFBQTtBQUFBO0FBQUEsWUFGbEIsZUFHRSw4REFBQyxHQUFEO0FBQUssbUJBQWEsRUFBRUw7QUFBcEI7QUFBQTtBQUFBO0FBQUE7QUFBQSxZQUhGO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxVQURGO0FBT0QiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9hcG9sbG8vLi9wYWdlcy9pbmRleC50c3g/ZGI3NiJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgdHlwZSB7IE5leHRQYWdlIH0gZnJvbSBcIm5leHRcIjtcbmltcG9ydCB7IHVzZVF1ZXJ5LCBncWwsIE5ldHdvcmtTdGF0dXMsIHVzZUxhenlRdWVyeSB9IGZyb20gXCJAYXBvbGxvL2NsaWVudFwiO1xuaW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSBcInJlYWN0XCI7XG5jb25zdCBHRVRfRE9HUyA9IGdxbGBcbiAgcXVlcnkgR2V0RG9ncyB7XG4gICAgZG9ncyB7XG4gICAgICBpZFxuICAgICAgYnJlZWRcbiAgICB9XG4gIH1cbmA7XG5cbmNvbnN0IEdFVF9ET0NfUEhPVE8gPSBncWxgXG4gIHF1ZXJ5IERvZygkYnJlZWQ6IFN0cmluZyEpIHtcbiAgICBkb2coYnJlZWQ6ICRicmVlZCkge1xuICAgICAgaWRcbiAgICAgIGRpc3BsYXlJbWFnZVxuICAgIH1cbiAgfVxuYDtcblxuZnVuY3Rpb24gRG9nUGhvdG8oeyBicmVlZCB9KSB7XG4gIGNvbnN0IFtnZXREb2csIHsgbG9hZGluZywgZXJyb3IsIGRhdGEsIG5ldHdvcmtTdGF0dXMgfV0gPSB1c2VMYXp5UXVlcnkoXG4gICAgR0VUX0RPQ19QSE9UTyxcbiAgICB7XG4gICAgICB2YXJpYWJsZXM6IHsgYnJlZWQgfSxcbiAgICAgIG5vdGlmeU9uTmV0d29ya1N0YXR1c0NoYW5nZTogdHJ1ZSxcbiAgICB9XG4gICk7XG4gIGlmIChuZXR3b3JrU3RhdHVzID09PSBOZXR3b3JrU3RhdHVzLnJlZmV0Y2gpIHJldHVybiBcIlJlZmV0Y2hpbmchXCI7XG4gIGlmIChsb2FkaW5nKSByZXR1cm4gbnVsbDtcbiAgaWYgKGVycm9yKSByZXR1cm4gYEVycm9yISAke2Vycm9yfWA7XG5cbiAgcmV0dXJuIChcbiAgICA8ZGl2PlxuICAgICAge2RhdGE/LmRvZyAmJiAoXG4gICAgICAgIDxpbWdcbiAgICAgICAgICBzcmM9e2RhdGEuZG9nLmRpc3BsYXlJbWFnZX1cbiAgICAgICAgICBzdHlsZT17eyBoZWlnaHQ6IDEwMCwgd2lkdGg6IDEwMCB9fVxuICAgICAgICA+PC9pbWc+XG4gICAgICApfVxuICAgICAgPGJ1dHRvbiBvbkNsaWNrPXsoKSA9PiBnZXREb2coeyB2YXJpYWJsZXM6IHsgYnJlZWQ6IFwiYnVsbGRvZ1wiIH0gfSl9PlxuICAgICAgICB1c2VMYXp5UXVlcnkhXG4gICAgICA8L2J1dHRvbj5cbiAgICA8L2Rpdj5cbiAgKTtcbn1cblxuY29uc3QgRG9nID0gKHsgb25Eb2dTZWxlY3RlZCB9KSA9PiB7XG4gIGNvbnN0IHsgbG9hZGluZywgZXJyb3IsIGRhdGEgfSA9IHVzZVF1ZXJ5KEdFVF9ET0dTKTtcbiAgaWYgKGxvYWRpbmcpIHJldHVybiA8cD5Mb2FkaW5nLi4uPC9wPjtcbiAgaWYgKGVycm9yKSByZXR1cm4gPHA+RXJyb3I8L3A+O1xuICByZXR1cm4gKFxuICAgIDw+XG4gICAgICB7LyogPERvZ1Bob3RvIC8+ICovfVxuICAgICAgPHNlbGVjdCBuYW1lPVwiZG9nXCIgb25DaGFuZ2U9e29uRG9nU2VsZWN0ZWR9PlxuICAgICAgICB7ZGF0YS5kb2dzLm1hcCgoZG9nKSA9PiAoXG4gICAgICAgICAgPG9wdGlvbiBrZXk9e2RvZy5pZH0gdmFsdWU9e2RvZy5icmVlZH0+XG4gICAgICAgICAgICB7ZG9nLmJyZWVkfVxuICAgICAgICAgIDwvb3B0aW9uPlxuICAgICAgICApKX1cbiAgICAgIDwvc2VsZWN0PlxuICAgIDwvPlxuICApO1xufTtcbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIEFwcCgpIHtcbiAgY29uc3QgW3NlbGVjdGVkRG9nLCBzZXRTZWxlY3RlZERvZ10gPSB1c2VTdGF0ZShudWxsKTtcbiAgY29uc3Qgb25Eb2dTZWxlY3RlZCA9ICh7IHRhcmdldCB9KSA9PiB7XG4gICAgc2V0U2VsZWN0ZWREb2codGFyZ2V0LnZhbHVlKTtcbiAgfTtcblxuICByZXR1cm4gKFxuICAgIDxkaXY+XG4gICAgICA8aDI+QnVpbGRpbmcgUXVlcnkgY29tcG9uZW50cyDwn5qAPC9oMj5cbiAgICAgIHtzZWxlY3RlZERvZyAmJiA8RG9nUGhvdG8gYnJlZWQ9e3NlbGVjdGVkRG9nfSAvPn1cbiAgICAgIDxEb2cgb25Eb2dTZWxlY3RlZD17b25Eb2dTZWxlY3RlZH0gLz5cbiAgICA8L2Rpdj5cbiAgKTtcbn1cbiJdLCJuYW1lcyI6WyJ1c2VRdWVyeSIsImdxbCIsIk5ldHdvcmtTdGF0dXMiLCJ1c2VMYXp5UXVlcnkiLCJSZWFjdCIsInVzZVN0YXRlIiwiR0VUX0RPR1MiLCJHRVRfRE9DX1BIT1RPIiwiRG9nUGhvdG8iLCJicmVlZCIsImdldERvZyIsImxvYWRpbmciLCJlcnJvciIsImRhdGEiLCJuZXR3b3JrU3RhdHVzIiwidmFyaWFibGVzIiwibm90aWZ5T25OZXR3b3JrU3RhdHVzQ2hhbmdlIiwicmVmZXRjaCIsImRvZyIsImRpc3BsYXlJbWFnZSIsImhlaWdodCIsIndpZHRoIiwiRG9nIiwib25Eb2dTZWxlY3RlZCIsImRvZ3MiLCJtYXAiLCJpZCIsIkFwcCIsInNlbGVjdGVkRG9nIiwic2V0U2VsZWN0ZWREb2ciLCJ0YXJnZXQiLCJ2YWx1ZSJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./pages/index.tsx\n");
+
+/***/ }),
+
+/***/ "@apollo/client":
+/*!*********************************!*\
+  !*** external "@apollo/client" ***!
+  \*********************************/
+/***/ ((module) => {
+
+module.exports = require("@apollo/client");
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "react" ***!
+  \************************/
+/***/ ((module) => {
+
+module.exports = require("react");
+
+/***/ }),
+
+/***/ "react/jsx-dev-runtime":
+/*!****************************************!*\
+  !*** external "react/jsx-dev-runtime" ***!
+  \****************************************/
+/***/ ((module) => {
+
+module.exports = require("react/jsx-dev-runtime");
+
+/***/ })
+
+};
+;
+
+// load runtime
+var __webpack_require__ = require("../webpack-runtime.js");
+__webpack_require__.C(exports);
+var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
+var __webpack_exports__ = (__webpack_exec__("./pages/index.tsx"));
+module.exports = __webpack_exports__;
+
+})();
